@@ -3,6 +3,7 @@ var cheerio = require('cheerio');
 
 website = "http://nhacvietplus.com.vn/";
 url = "http://nhacvietplus.com.vn/Blog-Radio/97/265/287/";
+audio_host = "http://media.nhacvietplus.com.vn/";
 audio_type = 'blog_radio';
 
 // Loop for each page contains list blog radio
@@ -82,8 +83,7 @@ function parse_audio_url(url)
 	if (url){
 		arr = url.split('&');
 		file = arr[0].slice(5);
-		stream =arr[1].slice(9);
-		audioUrl = stream + "/mp3:" + file;
+		audioUrl = audio_host + file;
 		//console.log("audio url:"+ audioUrl);
 		return audioUrl;
 	}
@@ -98,4 +98,4 @@ function get_pos_from_name(name)
 	return pos;
 }
 
-exports.scrapingPage = scrapingPage;
+exports.scrapingPage = scrapingPage;"/mp3:"

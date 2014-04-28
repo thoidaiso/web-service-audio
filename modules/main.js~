@@ -15,7 +15,7 @@ var url = mongodb_url;
 mongoose.connect(url);
 
 
-//mongoose.models.Audio.remove({pos:{$gte:0}}).exec();
+mongoose.models.Audio.remove({}).exec();
 mongoose.models.Audio.count({}, function (err, num) { console.log('number of audio:',num)  });
 
 module.exports = mongoose.models;
