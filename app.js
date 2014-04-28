@@ -57,10 +57,19 @@ require('./modules/main.js');
 require('./routes/index.js');
 
 GLOBAL.Audio = mongoose.model('Audio');
-
 var scraping_audio = require('./scraping/scraping_blog_audio.js');
 
-//scraping_audio.scrapingPage();
+
+
+//set schedule to run scraping audio every week on 17h sunday
+var schedule = require('node-schedule');
+var rule = new schedule.RecurrenceRule();
+rule.dayOfWeek = [1];
+rule.hour = 9;
+rule.minute = 37;
+
+schedule.scheduleJob(rule, scraping_audio.scrapingPage() );
+
 
 http.createServer(app).listen(3001, function(){
   console.log("Express server listening on port %d in %s mode", 3001, app.settings.env);

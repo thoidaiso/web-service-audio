@@ -6,3 +6,17 @@ exports.get_list_blog_radio = function(req, res){
 	});
 	
 }
+
+exports.get_total = function(req, res){
+	console.log("get total audio");
+	type = req.body.type;
+	if (type)
+		Audio.count({type: type}, function (err, num) { 
+			console.log(num);			
+			res.json(num)});
+	else
+		Audio.count({}, function (err, num) { 
+			console.log(num);			
+			res.json(num)});
+
+}

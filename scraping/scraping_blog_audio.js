@@ -79,12 +79,15 @@ function scrapingBlogAudio(name, imgUrl, url)
 //parse audio url from link in web
 function parse_audio_url(url)
 {
-	arr = url.split('&');
-	file = arr[0].slice(5);
-	stream =arr[1].slice(9);
-	audioUrl = stream + "/mp3:" + file;
-	//console.log("audio url:"+ audioUrl);
-	return audioUrl;
+	if (url){
+		arr = url.split('&');
+		file = arr[0].slice(5);
+		stream =arr[1].slice(9);
+		audioUrl = stream + "/mp3:" + file;
+		//console.log("audio url:"+ audioUrl);
+		return audioUrl;
+	}
+	return "";
 	
 }
 

@@ -32,7 +32,7 @@ function scrapingPage(page)
 			    console.log("\nname:"+name);
 
 			    Audio.findAudio(name, imgUrl, blog_audio_url, audio_type, function(name, imgUrl, blog_audio_url, result){
-				console.log("\n-------name;;="+name);
+				//console.log("\n-------name;;="+name);
 				if (!result)
 					scrapingBlogAudio(name, imgUrl, blog_audio_url);
 			    });
