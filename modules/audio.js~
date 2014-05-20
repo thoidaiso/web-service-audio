@@ -84,15 +84,15 @@ AudioSchema.statics.findAudio = function(name, imgUrl, blog_audio_url, type, cal
 	}
 }
 
-//find list 30 audio by sequence
-// if sequence = 1 get first 30 audios
-// if sequece  = 2 get second 30 audios
+//find list 20 audio by sequence
+// if sequence = 1 get first 20 audios
+// if sequece  = 2 get second 20 audios
 AudioSchema.statics.findListAudio = function(type, sequence, callback){
 	
 	if (type && sequence)
 	{
-		skip = 0 + (sequence-1)*30;
-		limit = 30 + (sequence-1)*30;
+		skip = 0 + (sequence-1)*20;
+		limit = 20 + (sequence-1)*20;
 		mongoose.model('Audio').find({
 			type: type},null,{  skip:skip, // Starting Row
 				       limit:limit, // Ending Row
@@ -101,7 +101,8 @@ AudioSchema.statics.findListAudio = function(type, sequence, callback){
 					     }
 				    }, function(err, docs){
 					if (!err)
-						callback(docs);}); 
+						callback(docs);
+					}); 
 	}
 }
 

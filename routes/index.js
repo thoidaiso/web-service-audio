@@ -17,3 +17,13 @@ app.post('/audio/get_latest_list_blog_radio', audio.get_list_blog_radio);
 
 //get the number of audio in database
 app.post('/audio/get_total', audio.get_total);
+
+GLOBAL.Scraping_Logs = mongoose.model('Scraping_Logs');
+
+var scraping_logs = require('./scraping_logs.js');
+
+//get the number of time run scraping  in day
+app.post('/logs/get_total', scraping_logs.get_total_in_day);
+
+//get list  of time run scraping  in day
+app.post('/logs/get_latest_log', scraping_logs.get_latest_log);

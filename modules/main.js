@@ -6,11 +6,12 @@ GLOBAL.Schema = mongoose.Schema;
 
 
 require('./audio.js');
+require('./scraping_logs.js');
 app.models = mongoose.models;
 
 // connect to mongodb 
-var url = mongodb_url;
-//var url = mongodb_url_deploy
+//var url = mongodb_url;
+var url = mongodb_url_deploy
 //var url = mongodb_url_deploy_modulus
 mongoose.connect(url);
 

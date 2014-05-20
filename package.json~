@@ -1,19 +1,19 @@
 {
   "name": "scrape_audio",
-  "version": "0.0.1-3",
+  "version": "0.0.1-5",
   "description": "Scrape audio",
   "main": "app.js",
   "author": "Lanu",
   "dependencies": {
     "express": "4.1.0",
-    "request": "latest",
+    "request": "2.34.0",
     "cheerio": "0.15.0",
     "mongoose": "3.8.8",
     "jade": ">= 0.0.1",
     "body-parser": "~1.0.1",
     "node-schedule": "0.1.13"
   },
-  "subdomain": "thoidaiso-scraping_audio",
+  "subdomain": "thoidaiso-scraping-audio",
   "scripts": {
     "start": "node app.js"
   },

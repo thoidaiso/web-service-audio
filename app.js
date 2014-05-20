@@ -68,7 +68,7 @@ rule.dayOfWeek = [1];
 rule.hour = 9;
 rule.minute = 37;
 
-schedule.scheduleJob(rule, scraping_audio.scrapingPage() );
+schedule.scheduleJob(rule, scraping_audio.scraping() );
 
 
 http.createServer(app).listen(3001, function(){

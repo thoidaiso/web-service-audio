@@ -6,9 +6,19 @@ url = "http://nhacvietplus.com.vn/Blog-Radio/97/265/287/";
 audio_host = "http://media.nhacvietplus.com.vn/";
 audio_type = 'blog_radio';
 
+function scraping()
+{
+	Scraping_Logs.createScraping(audio_type, function(result){
+		console.log("create log");	
+	});
+	scrapingPage();
+}
+
 // Loop for each page contains list blog radio
 function scrapingPage(page)
 {
+	
+	
 	if (!page)
 	{
 		page = 1;

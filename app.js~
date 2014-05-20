@@ -65,10 +65,10 @@ var scraping_audio = require('./scraping/scraping_blog_audio.js');
 var schedule = require('node-schedule');
 var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [1];
-rule.hour = 10;
-rule.minute = 0;
+rule.hour = 9;
+rule.minute = 37;
 
-schedule.scheduleJob(rule, scraping_audio.scrapingPage() );
+schedule.scheduleJob(rule, scraping_audio.scraping() );
 
 
 http.createServer(app).listen(3001, function(){
